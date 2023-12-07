@@ -39,3 +39,5 @@ yarn-error.*
 # Ignorar o arquivo .env
 .env
 
+
+.vercel

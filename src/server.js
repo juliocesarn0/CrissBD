@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const gamesRoutes = require("./routes/gamesRoutes");
-require("dotenv").config(); // Carrega as variáveis de ambiente do arquivo .env
 
 const app = express();
 app.use(bodyParser.json());
@@ -15,11 +14,14 @@ app.use(
   })
 );
 
-// Conexão com o MongoDB Atlas usando variável de ambiente
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// Conexão com o MongoDB Atlas
+mongoose.connect(
+  "mongodb+srv://batata:123@seila.qtgm8ch.mongodb.net/?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "Erro de conexão com o MongoDB:"));
