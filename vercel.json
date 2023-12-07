@@ -9,10 +9,7 @@
   "routes": [
     {
       "src": "/games",
-      "dest": "server.js"
+      "dest": "./routes/gamesRoutes.js"
     }
-  ],
-  "env": {
-    "MONGODB_URI": "@mongodb-uri"
-  }
+  ]
 }
